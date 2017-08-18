@@ -4,6 +4,11 @@ const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
+// menubar
+const menubar = require('menubar');
+
+// ====
+
 const path = require('path')
 const url = require('url')
 
@@ -34,10 +39,35 @@ function createWindow () {
   })
 }
 
+function createMenubar() {
+  const options = {
+    width: 300,
+    height: 520,
+    resizable: false,
+    movable: false,
+    minimizable: false,
+    maximizable: false,
+    icon: '../images/IconTemplate.png',
+    tooltip: 'BitGuard Menubar',
+    fullscreen: false,
+    fullscreenable: false,
+    backgroundColor: '#F2F2E9',
+    zoomToPageWidth: false,
+    showDockIcon: false
+  };
+
+  const mb = menubar(options);
+
+  mb.on('ready', () => {
+    console.warn('ITS OK!');
+  })
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+// app.on('ready', createWindow)
+app.on('ready', createMenubar);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
