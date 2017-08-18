@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bit-Guard!</title>
+
+    <style>
+      body {
+        font-size: 14px;
+      }
+
+      #table {
+        margin: 30px 0;
+        position: relative;
+      }
+
+      form, #alertsList {
+        margin: 30px 0;
+      }
+
+      label {
+        display: block;
+      }
+
+      fieldset {
+        margin-bottom: 20px;
+      }
+
+      #alertMessage {
+        padding: 12px 15px;
+        border-radius: 3px;
+        color: #FFFFFF;
+      }
+
+      .success {
+        background-color: green;
+      }
+
+      .fail {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bit-Guard!</h1>
+
+    <div id="table"></div>
+
+    <form id="alertForm">
+      <fieldset>
+        <label for="alertValue">Valor do alerta</label>
+        <input type="tel" placeholder="14000" id="alertValue">
+      </fieldset>
+
+      <button>adicionar alerta</button>
+    </form>
+
+    <aside id="alertsList"></aside>
+
+    <div id="alertMessage"></div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    // require('./src/js/form.js');
+    require('./renderer.js');
+  </script>
+</html>
