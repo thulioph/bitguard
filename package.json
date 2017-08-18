@@ -15,9 +15,9 @@
   "author": "thulioph",
   "license": "MIT",
   "devDependencies": {
-    "electron": "~1.6.2"
-  },
-  "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "browser-window": "^0.4.0",
+    "electron": "~1.6.7",
+    "menubar": "^5.2.3"
   }
 }

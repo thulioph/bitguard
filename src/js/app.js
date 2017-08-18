@@ -8,6 +8,11 @@ const API_URL = 'https://www.mercadobitcoin.net/api/ticker';
     console.warn(obj);
 
     const table = document.querySelector('#table');
+    const data = document.querySelector('#lastData');
+
+    const hours = new Date(obj.date).getHours();
+    const minutes = new Date(obj.date).getMinutes();
+    const seconds = new Date(obj.date).getSeconds();
 
     table.innerHTML = `
       Alta
@@ -31,7 +36,10 @@ const API_URL = 'https://www.mercadobitcoin.net/api/ticker';
       <br/>
     `;
 
-    return table;
+    data.innerHTML = `
+      Última verificação
+      ${hours}:${minutes}:${seconds}
+    `;
   };
 
   const getBitcointData = () => {
