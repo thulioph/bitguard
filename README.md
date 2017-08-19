@@ -13,7 +13,7 @@
 
 ### Version 1.0.0
 
-- [Download macOS](https://github.com/thulioph/bitguard/releases/download/1.0.0/Bitguard-1.0.0-mac.zip)
+- [Download macOS](https://github.com/thulioph/bitguard/releases/download/1.0.0/bitguard-1.0.0-mac.zip)
 
 ## Setup
 
