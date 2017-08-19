@@ -6,13 +6,13 @@
   "build": {
     "appId": "bitguard.id",
     "mac": {
-      "category": "com.bitguard.app"
+      "category": "public.app-category.finance",
+      "icon": "electron.icns"
     }
   },
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder --mac"
   },
   "repository": "https://github.com/thulioph/bitguard",
   "keywords": [
