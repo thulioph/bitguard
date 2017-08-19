@@ -1,0 +1,64 @@
+body {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+   padding: 0 20px;
+}
+
+.box {
+  margin-left: 10px;
+  text-align: center;
+  width: 45%;
+  padding: 10px 12px;
+  background-color: #d6d6a2;
+  display: inline-block;
+}
+
+.box span {
+  position: relative;
+  font-size: 40px;
+  color: #FFFFFF;
+  font-weight: 900;
+}
+
+.box span:before {
+  content: 'R$';
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+#table {
+  margin: 30px 0;
+  position: relative;
+}
+
+form, #alertsList {
+  margin: 30px 0;
+}
+
+label {
+  display: block;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+#alertMessage {
+  padding: 12px 15px;
+  border-radius: 3px;
+  color: #FFFFFF;
+}
+
+.box.success {
+  background-color: green;
+}
+
+.toolbar-header {
+  margin-bottom: 20px;
+}

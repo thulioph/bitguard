@@ -41,8 +41,8 @@ function createWindow () {
 
 function createMenubar() {
   const options = {
-    width: 300,
-    height: 520,
+    width: 540,
+    height: 350,
     resizable: false,
     movable: false,
     minimizable: false,

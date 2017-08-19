@@ -7,39 +7,26 @@ const API_URL = 'https://www.mercadobitcoin.net/api/ticker';
   const displayData = (obj) => {
     console.warn(obj);
 
-    const table = document.querySelector('#table');
-    const data = document.querySelector('#lastData');
+    const tbody = document.querySelector('#table tbody');
+    const lastValue = document.querySelector('#lastValue');
+    const data = document.querySelector('#lastUpdate');
 
     const hours = new Date(obj.date).getHours();
     const minutes = new Date(obj.date).getMinutes();
     const seconds = new Date(obj.date).getSeconds();
 
-    table.innerHTML = `
-      Alta
-      R$ ${obj.high}
-      <br/>
-
-      Baixa
-      R$ ${obj.low}
-      <br/>
-
-      Venda
-      R$ ${obj.sell}
-      <br/>
-
-      Compra
-      R$ ${obj.buy}
-      <br/>
-
-      Última
-      R$ ${obj.last}
-      <br/>
+    tbody.innerHTML = `
+      <tr>
+        <td>R$ ${obj.high}</td>
+        <td>R$ ${obj.low}</td>
+        <td>R$ ${obj.sell}</td>
+        <td>R$ ${obj.buy}</td>
+      </tr>
     `;
 
-    data.innerHTML = `
-      Última verificação
-      ${hours}:${minutes}:${seconds}
-    `;
+    lastValue.innerHTML = `${Math.round(obj.last)}`;
+
+    // data.innerHTML = `${hours}:${minutes}:${seconds}`;
   };
 
   const getBitcointData = () => {
@@ -50,35 +37,28 @@ const API_URL = 'https://www.mercadobitcoin.net/api/ticker';
   };
 
   const buyNow = (obj) => {
-    const alert = document.querySelector('#alertsList');
+    const alert = document.querySelector('#targetValue');
     const value = alert.innerHTML.replace('R$ ', '');
 
     const lastValue = obj.last;
     const lastAlert = Number(value);
 
+    const boxLastValue = document.querySelector('.box.last');
+
     if (lastValue <= lastAlert) {
-      sendAlert('Compra!', 'success');
-      displayNotification('BitGuard', 'Compra agora!');
+      displayNotification('BitGuard', 'Target matched!');
+
+      boxLastValue.classList.add('success');
     } else {
-      sendAlert('NÃO Compra!', 'fail');
+      boxLastValue.classList.remove('success');
     }
   }
 
-  const sendAlert = (message, type) => {
-    const alert = document.querySelector('#alertMessage');
-
-    alert.classList.add(type);
-    alert.innerHTML = `${message}`;
-  };
-
   const displayNotification = (title, msg) => {
     const myNotification = new Notification(title, {
-      body: msg
+      body: msg,
+      icon: './src/images/IconTemplate@2x.png'
     });
-
-    myNotification.onclick = () => {
-      console.log('Notification clicked');
-    }
   }
 
   const getData = (number) => {

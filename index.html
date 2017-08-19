@@ -2,64 +2,70 @@
 <html>
   <head>
     <meta charset="UTF-8">
+
     <title>Bit-Guard!</title>
 
-    <style>
-      body {
-        font-size: 14px;
-      }
+    <link rel="stylesheet" href="./src/css/photon.css">
+    <link rel="stylesheet" href="./src/css/main.css">
 
-      #table {
-        margin: 30px 0;
-        position: relative;
-      }
-
-      form, #alertsList {
-        margin: 30px 0;
-      }
-
-      label {
-        display: block;
-      }
-
-      fieldset {
-        margin-bottom: 20px;
-      }
-
-      #alertMessage {
-        padding: 12px 15px;
-        border-radius: 3px;
-        color: #FFFFFF;
-      }
-
-      .success {
-        background-color: green;
-      }
-
-      .fail {
-        background-color: red;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
   </head>
+
   <body>
-    <h1>Bit-Guard!</h1>
+    <header class="toolbar toolbar-header">
+      <h1 class="title">BitGuard</h1>
+    </header>
 
-    <div id="table"></div>
+    <main>
+      <aside class="box target">
+        <span id="targetValue"></span>
+      </aside>
 
-    <form id="alertForm">
-      <fieldset>
-        <label for="alertValue">Valor do alerta</label>
-        <input type="tel" placeholder="14000" id="alertValue">
-      </fieldset>
+      <aside class="box last">
+        <span id="lastValue"></span>
+      </aside>
 
-      <button>adicionar alerta</button>
-    </form>
+      <form id="alertForm">
+        <div class="form-group">
+          <label for="alertValue">What's your target?</label>
+          <input class="form-control" type="tel" placeholder="14000" id="alertValue">
+        </div>
 
-    <div id="lastData"></div>
+        <button class="btn btn-large btn-primary">Add alert</button>
+      </form>
 
-    <aside id="alertsList"></aside>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>
+              <span class="icon icon-flag"></span>
+              Alta
+            </th>
 
-    <div id="alertMessage"></div>
+            <th>
+              <span class="icon icon-chart-pie"></span>
+              Baixa
+            </th>
+
+            <th>
+              <span class="icon icon-tag"></span>
+              Venda
+            </th>
+
+            <th>
+              <span class="icon icon-basket"></span>
+              Compra
+            </th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+      </table>
+
+      <div id="alertMessage"></div>
+    </main>
   </body>
 
   <script>
