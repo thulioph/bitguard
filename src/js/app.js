@@ -56,8 +56,7 @@ const API_URL = 'https://www.mercadobitcoin.net/api/ticker';
 
   const displayNotification = (title, msg) => {
     const myNotification = new Notification(title, {
-      body: msg,
-      icon: './src/images/IconTemplate@2x.png'
+      body: msg
     });
   }
 

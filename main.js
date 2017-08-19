@@ -47,7 +47,7 @@ function createMenubar() {
     movable: false,
     minimizable: false,
     maximizable: false,
-    icon: '../images/IconTemplate.png',
+    icon: './src/images/IconTemplate@2x.png',
     tooltip: 'BitGuard Menubar',
     fullscreen: false,
     fullscreenable: false,
