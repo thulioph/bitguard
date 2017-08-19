@@ -3,7 +3,7 @@
 
   const form = document.querySelector('#alertForm');
   const input = document.querySelector('#alertValue');
-  const list = document.querySelector('#alertsList');
+  const target = document.querySelector('#targetValue');
 
   const handleForm = (evt) => {
     evt.preventDefault();
@@ -21,7 +21,7 @@
   const addAlert = (number) => {
     const val = Math.round(number);
 
-    list.innerHTML = `R$ ${val}`;
+    target.innerHTML = `${val}`;
   }
 
   const saveOnStorage = (number) => {

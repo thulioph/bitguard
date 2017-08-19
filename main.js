@@ -41,13 +41,13 @@ function createWindow () {
 
 function createMenubar() {
   const options = {
-    width: 300,
-    height: 520,
+    width: 540,
+    height: 350,
     resizable: false,
     movable: false,
     minimizable: false,
     maximizable: false,
-    icon: '../images/IconTemplate.png',
+    icon: './src/images/IconTemplate@2x.png',
     tooltip: 'BitGuard Menubar',
     fullscreen: false,
     fullscreenable: false,
