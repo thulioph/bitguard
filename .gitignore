@@ -1,6 +1,9 @@
 node_modules
-.DS_Store
 dist
+bitguard-darwin-x64
+
 *.log
 
+.DS_Store
 .vscode
+.dmg
