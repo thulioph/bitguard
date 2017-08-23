@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "description": "A simple bitcoin monitor",
   "main": "main.js",
-  "build": {
-    "appId": "bitguard.id",
-    "mac": {
-      "category": "public.app-category.finance",
-      "icon": "electron.icns"
-    }
-  },
   "scripts": {
+    "preinstall": "npm i -g electron-packager electron-installer-dmg",
     "start": "electron .",
-    "build": "electron-builder --mac"
+    "build_mac": "electron-packager . --no-prune --overwrite",
+    "prepare_dmg": "electron-installer-dmg './bitguard-darwin-x64/bitguard.app' 'bitguard'",
+    "build": "npm run build_mac && npm run prepare_dmg"
   },
   "repository": "https://github.com/thulioph/bitguard",
   "keywords": [
@@ -26,7 +22,7 @@
     "axios": "^0.16.2",
     "browser-window": "^0.4.0",
     "electron": "~1.6.7",
-    "electron-builder": "^19.22.1",
+    "electron-packager": "^8.7.2",
     "menubar": "^5.2.3"
   }
 }
